@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-item>
+    <ion-icon name="person-circle-outline"></ion-icon>
+    <ion-button routerLink="/profil" expand="block" fill="clear" shape="round">
+      <ion-label>Profil</ion-label>
+    </ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="isAdmin">
+    <ion-icon name="settings-outline"></ion-icon>
+    <ion-button (click)="admin()" expand="block" fill="clear" shape="round">
+      <ion-label>Admin</ion-label>
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="log-out-outline"></ion-icon>
+    <ion-button (click)="logut()" expand="block" fill="clear" shape="round">
+      <ion-label>Log ut</ion-label>
+    </ion-button>
+  </ion-item>
+</ion-list>

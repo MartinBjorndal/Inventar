@@ -1,8 +1,8 @@
 {
   "name": "Inventar",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Martin Bjørndal",
+  "homepage": "https://inventar.torhelge.no",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

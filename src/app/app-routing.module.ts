@@ -1,4 +1,8 @@
-import { NgModule } from '@angular/core';
+import { ProfilComponent } from './profil/profil.component';
+import { UtsjekkComponent } from './utsjekk/utsjekk.component';
+import { InnsjekkComponent } from './innsjekk/innsjekk.component';
+
+import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -11,6 +15,20 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'innsjekk',
+    component: InnsjekkComponent
+  },
+  {
+    path: 'utsjekk',
+    component: UtsjekkComponent
+  },
+  {
+    path: 'profil',
+    component: ProfilComponent
+  },
+  
+
 ];
 
 @NgModule({

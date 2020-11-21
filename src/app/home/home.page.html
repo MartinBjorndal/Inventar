@@ -1,13 +1,16 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Inventar System
-    </ion-title>
-  </ion-toolbar>
+  <app-navbar></app-navbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <p>
-   Hello World
- </p>
+ <ion-grid>
+   <ion-row class="ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <div class="container">
+        <ion-button routerLink="/utsjekk" fill="outline" size="large">Utsjekk</ion-button>
+        <ion-button routerLink="/innsjekk" fill="outline" size="large">Innsjekk</ion-button>
+    </div>
+    </ion-col> 
+   </ion-row>  
+ </ion-grid>
 </ion-content>

@@ -1,0 +1,19 @@
+<ion-toolbar>
+  <ion-title>
+    Inventar System
+  </ion-title>
+
+  <!-- Vis bruker avatar, brukernavn og meny hvist bruker er logget inn -->
+  <ion-item slot="end" *ngIf="loggedin">
+    <ion-avatar slot="start">
+      <img src="./assets/icon/defaultUserIcon.jpg">
+    </ion-avatar> 
+    <ion-button (click)="openMenu($event)" fill="clear"><ion-label>{{username}}</ion-label></ion-button>  
+  </ion-item>
+
+  <!-- Vis log in link hvist bruker ikke er logget inn -->
+  <ion-item slot="end" *ngIf="!loggedin"> 
+    <ion-button (click)="login()" fill="clear"><ion-label>Login</ion-label></ion-button>  
+  </ion-item>
+
+</ion-toolbar>

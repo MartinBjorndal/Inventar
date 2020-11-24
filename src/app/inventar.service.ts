@@ -14,7 +14,8 @@ import { Inventar } from './inventar';
 
 export class InventarService {
   baseUrl = 'http://localhost/api';
-  inventar = Inventar[];
+  inventar: Inventar[];
+
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Inventar[]> {

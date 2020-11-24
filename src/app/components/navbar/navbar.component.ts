@@ -13,26 +13,10 @@ export class NavbarComponent implements OnInit {
   username = 'Default';
   loggedin = true;
   constructor(private popCtrl: PopoverController, public router: Router) { 
-   
-  }
-  
 
-divStyle = {
-  width: "320px" //Initial width
- }
- customWidth: any;
- 
- @HostListener('window:resize')
- public detectResize(): void {
-      this.customWidth = document.getElementById('element').offsetWidth
-      // Do you magic here ...
-      this.divStyle = {
-      width: this.customWidth - 20 + "px"
   }
- }
 
   ngOnInit() {}
-
 
   async openMenu(ev: any){
     const popover = await this.popCtrl.create({
@@ -43,6 +27,8 @@ divStyle = {
     return await popover.present();
   }
 
-  login(){}
-  
+
+  login(){
+
+  }
 }

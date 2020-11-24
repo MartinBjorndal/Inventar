@@ -16,5 +16,8 @@ export class PopoverComponent implements OnInit {
 
 ngOnInit() {}
 
+admin(){}
+
+logut(){}
 
 }

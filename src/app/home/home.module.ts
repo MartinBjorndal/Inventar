@@ -1,3 +1,5 @@
+import { ProfilComponent } from './../profil/profil.component';
+import { UtsjekkComponent } from './../utsjekk/utsjekk.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -6,6 +8,10 @@ import { HomePage } from './home.page';
 import { NavbarComponent } from './../components/navbar/navbar.component';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { AdminComponent } from '../admin/admin.component';
+import { InnsjekkComponent } from '../innsjekk/innsjekk.component';
+import { PopoverComponent } from '../components/popover/popover.component';
+import { LogoutComponent } from '../components/logout/logout.component';
 
 
 @NgModule({
@@ -15,7 +21,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, NavbarComponent],
+  declarations: [HomePage, NavbarComponent, AdminComponent, UtsjekkComponent, ProfilComponent, InnsjekkComponent, PopoverComponent, LogoutComponent],
   exports: [NavbarComponent]
 })
 export class HomePageModule {}

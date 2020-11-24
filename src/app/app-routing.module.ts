@@ -1,3 +1,4 @@
+import { AdminComponent } from './admin/admin.component';
 import { ProfilComponent } from './profil/profil.component';
 import { UtsjekkComponent } from './utsjekk/utsjekk.component';
 import { InnsjekkComponent } from './innsjekk/innsjekk.component';
@@ -27,6 +28,11 @@ const routes: Routes = [
     path: 'profil',
     component: ProfilComponent
   },
+  {
+    path: 'admin',
+    component: AdminComponent
+  },
+  
   
 
 ];

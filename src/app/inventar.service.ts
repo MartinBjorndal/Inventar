@@ -13,7 +13,7 @@ import { Inventar } from './inventar';
 })
 
 export class InventarService {
-  baseUrl = 'http://localhost/api';
+  baseUrl = 'http://localhost:4200/api';
   inventar: Inventar[];
 
   constructor(private http: HttpClient) { }

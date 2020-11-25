@@ -1,3 +1,4 @@
+
 import { NavbarComponent } from './../components/navbar/navbar.component';
 
 
@@ -11,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-
+  loggedin = false;
   constructor() {
 
   }

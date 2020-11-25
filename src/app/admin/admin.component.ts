@@ -1,4 +1,4 @@
-import { InventarService } from './../app/inventar.service';
+import { InventarService } from './../inventar.service';
 import { Inventar } from './../inventar';
 import { Component, OnInit } from '@angular/core';
 

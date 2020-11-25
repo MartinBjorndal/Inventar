@@ -3,6 +3,6 @@ export class Bruker {
       id: number,
       uid: number,
       pin: string,
-      oprettet: Date,
+      oprettet: any,
       navn?: string) {}
 }

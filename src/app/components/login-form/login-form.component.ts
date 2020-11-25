@@ -26,6 +26,7 @@ export class LoginFormComponent implements OnInit {
    addPost(post){
      this.uid = post.uid;
      this.pin = post.pin;
+     console.log("UID: ", this.uid,"Pin: ", this.pin)
    }
 
   ngOnInit() {}

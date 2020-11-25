@@ -2,24 +2,26 @@
   <ion-row>
     <ion-col size="1" size-md="3"></ion-col>
     <ion-col size="10" size-md="6">
-      <ion-img style="width: 80px; height: 80px;" src="../../../assets/icon/logo.png"></ion-img>
+      <ion-img style="width: 120px; height: 120px; margin-left: calc(50% - 60px)" src="../../../assets/icon/logo.png"></ion-img>
       <ion-card class="margin padding justify-content-center">
-        <form>
+
+        <form [formGroup]="loginForm" (ngSubmit)="addPost(loginForm.value)">
         <ion-item>
           <ion-label position="floating">UID:</ion-label>
-          <ion-input pattern="[0-9]" name="uid" minlength="6" maxlength="6" inputmode="numeric" clear-input="true" required type="text"></ion-input>
+          <ion-input formControlName="uid" inputmode="numeric" clear-input="true" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">PIN:</ion-label>
-          <ion-input pattern="[0-9]" name="pin" minlength="6" maxlength="6" inputmode="numeric" clear-input="true" required type="password"></ion-input>
+          <ion-input formControlName="pin" inputmode="numeric" clear-input="true" type="password"></ion-input>
         </ion-item>
       
-        <ion-button expand="block" name="submit" class="padding">
+        <ion-button color="success" expand="block" type="submit" class="padding" [disabled]="!loginForm.valid">
           <ion-icon slot="start" name="log-in-outline"></ion-icon>
           <ion-label>Login</ion-label>
         </ion-button>
       </form>
+
     </ion-card>
     
     </ion-col>

@@ -15,6 +15,7 @@ import { AdminComponent } from '../admin/admin.component';
 import { InnsjekkComponent } from '../innsjekk/innsjekk.component';
 import { PopoverComponent } from '../components/popover/popover.component';
 import { LogoutComponent } from '../components/logout/logout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { LogoutComponent } from '../components/logout/logout.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     HomePage,

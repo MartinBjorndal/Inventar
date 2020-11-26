@@ -10,11 +10,17 @@
           <ion-label position="floating">UID:</ion-label>
           <ion-input formControlName="uid" inputmode="numeric" clear-input="true" type="text"></ion-input>
         </ion-item>
+        <div class="alert" *ngIf="!loginForm.controls['uid'].valid && loginForm.controls['uid'].touched">
+          {{ uidAlert }}
+        </div>
 
         <ion-item>
           <ion-label position="floating">PIN:</ion-label>
           <ion-input formControlName="pin" inputmode="numeric" clear-input="true" type="password"></ion-input>
         </ion-item>
+        <div class="alert" *ngIf="!loginForm.controls['pin'].valid && loginForm.controls['pin'].touched">
+          {{ pinAlert }}
+        </div>
       
         <ion-button color="success" expand="block" type="submit" class="padding" [disabled]="!loginForm.valid">
           <ion-icon slot="start" name="log-in-outline"></ion-icon>

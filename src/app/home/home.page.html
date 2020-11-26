@@ -6,15 +6,21 @@
  <ion-grid>
    <ion-row class="ion-align-items-center">
 
-    <ion-col size="12" class="ion-text-center" *ngIf="loggedin">
+    <!-- Vis login hvis bruker ikke er innlogget -->
+    <ion-col size="12" class="" *ngIf="!loggedin">
+      <app-login-form></app-login-form>
+    </ion-col> 
+  
+    <!-- Vis navigering hvis bruker er innlogget -->
+    <ion-col size="12" *ngIf="loggedin" class="ion-text-center">
       <div class="container">
         <ion-button routerLink="/utsjekk" fill="outline" size="large">Utsjekk</ion-button>
         <ion-button routerLink="/innsjekk" fill="outline" size="large">Innsjekk</ion-button>
-    </div>
-    </ion-col> 
-    <ion-col size="12">
-      <app-login-form></app-login-form>
+      </div>
     </ion-col>
+ 
   </ion-row>  
  </ion-grid>
 </ion-content>
+
+

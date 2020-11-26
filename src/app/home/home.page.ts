@@ -12,7 +12,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  loggedin = false;
+ 
+  loggedin = sessionStorage.getItem("loggedin");
+ 
   constructor() {
 
   }

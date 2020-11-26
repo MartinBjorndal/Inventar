@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ export class PopoverComponent implements OnInit {
 
   isAdmin = true;
 
-  constructor() {
+  constructor(private router: Router) {
 
    }
 
@@ -18,6 +19,10 @@ ngOnInit() {}
 
 admin(){}
 
-logut(){}
+logut(){
+  sessionStorage.clear();
+  location.reload();
+  this.router.navigate(['/home']);
+}
 
 }

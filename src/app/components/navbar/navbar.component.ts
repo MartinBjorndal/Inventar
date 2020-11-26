@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   username = 'Default';
-  loggedin = false;
+  loggedin = sessionStorage.getItem("loggedin");
   constructor(private popCtrl: PopoverController, public router: Router) { 
 
   }

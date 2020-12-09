@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.scss'],
 })
 export class ProfilComponent implements OnInit {
-
+  username = 'Default'; 
   constructor() { }
 
   ngOnInit() {}

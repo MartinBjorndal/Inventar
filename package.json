@@ -28,6 +28,10 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "cordova-plugin-ionic": "5.4.7",
+    "datatables.net-bs4": "^1.10.22",
+    "datatables.net-responsive-bs4": "^2.2.6",
+    "datatables.net-select-bs4": "^1.3.1",
+    "jquery": "^3.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

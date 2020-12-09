@@ -1,3 +1,4 @@
+import { UtsjekketComponent } from './components/utsjekket/utsjekket.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfilComponent } from './profil/profil.component';
 import { UtsjekkComponent } from './utsjekk/utsjekk.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'utsjekket',
+    component: UtsjekketComponent
   },
   
   

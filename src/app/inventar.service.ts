@@ -13,14 +13,15 @@ import { Inventar } from './inventar';
 })
 
 export class InventarService {
-  baseUrl = 'http://localhost:4200/api';
-  inventar: Inventar[];
-
+  baseUrl = 'http://localhost/api/inventory/';
+  inventar: Inventar;
+  dbg: any;
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Inventar[]> {
-    return this.http.get(`${this.baseUrl}/list`).pipe(map((res) => {
-      this.inventar = res['data'];
+  getAll(): Observable<Inventar> {
+    return this.http.get(`${this.baseUrl}/read.php`, {responseType: 'text'}).pipe(map((res) => {
+      this.inventar = JSON.parse(res);
+      console.log(this.inventar['body']);
       return this.inventar;
     }),
     catchError(this.handleError));

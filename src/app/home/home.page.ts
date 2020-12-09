@@ -1,7 +1,3 @@
-
-import { NavbarComponent } from './../components/navbar/navbar.component';
-
-
 import { Component } from '@angular/core';
 
 
@@ -13,7 +9,7 @@ import { Component } from '@angular/core';
 export class HomePage {
 
  
-  loggedin = sessionStorage.getItem("loggedin");
+  loggedin = sessionStorage.getItem('loggedin');
  
   constructor() {
 

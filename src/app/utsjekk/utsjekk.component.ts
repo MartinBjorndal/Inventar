@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./utsjekk.component.scss'],
 })
 export class UtsjekkComponent implements OnInit {
-
+ 
   constructor() { }
 
-  ngOnInit() {}
 
+  ngOnInit() {
+
+  }
 }

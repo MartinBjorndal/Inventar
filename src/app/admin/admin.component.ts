@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
 
   getInventar(): void {
     this.inventarService.getAll().subscribe((res: Inventar[]) => {
-      this.inventar = res;
+      this.inventar = res['body'];
     },
     (err) => {
       this.error = err;

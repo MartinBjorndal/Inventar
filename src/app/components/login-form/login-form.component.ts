@@ -22,7 +22,7 @@ export class LoginFormComponent implements OnInit {
     this.loginForm = fb.group({
       'uid': [null, Validators.compose([Validators.pattern('^[0-9]+$'),
       Validators.required, Validators.minLength(4), Validators.maxLength(6)])],
-      'pin': [null, Validators.compose([
+      'pin': [null, Validators.compose([Validators.pattern('^[0-9]+$'),
       Validators.required, Validators.minLength(4), Validators.maxLength(6)])]
     });
    }

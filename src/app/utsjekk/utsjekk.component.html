@@ -4,10 +4,57 @@
 
 <ion-content>
   <ion-grid fixed>
-    <ion-row  class="ion-text-center ion-padding-top">
+     <!-- Titel -->
+     <ion-row  class="ion-text-center ion-padding-top">
       <ion-col size="12">
         <ion-title>Utsjekk</ion-title>
       </ion-col>
     </ion-row>
+
+    <!-- Søke Felt -->
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col size="6">
+        <ion-searchbar showCancelButton="focus" color="primary" autocorrect="on" enterkeyhint="enter"></ion-searchbar>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+
+    <!-- Liste av tilgjengelig inventar -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <table id="myTable">
+            <thead>
+               <tr>
+                <th>Uid</th>
+                <th>Navn</th>
+                <th>Status</th>
+                <th>Plassering</th>
+                <th>Kommentar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>000001</td>
+                <td>Telt</td>
+                <td>Tilgjengelig</td>
+                <td>Lageret</td>
+                <td>Ødelagt af</td>
+              </tr>
+            </tbody>
+          </table>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
+  <script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+  });
+
+</script>
 </ion-content>
+

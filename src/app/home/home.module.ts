@@ -1,5 +1,3 @@
-
-
 import { ProfilComponent } from './../profil/profil.component';
 import { UtsjekkComponent } from './../utsjekk/utsjekk.component';
 import { NgModule } from '@angular/core';
@@ -14,7 +12,11 @@ import { AdminComponent } from '../admin/admin.component';
 import { InnsjekkComponent } from '../innsjekk/innsjekk.component';
 import { PopoverComponent } from '../components/popover/popover.component';
 import { LogoutComponent } from '../components/logout/logout.component';
+import { UtsjekketComponent } from '../components/utsjekket/utsjekket.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserModule
   ],
   declarations: [
     HomePage,
@@ -35,6 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProfilComponent,
     InnsjekkComponent,
     PopoverComponent,
+    UtsjekketComponent,
     LogoutComponent],
   exports: [NavbarComponent]
 })

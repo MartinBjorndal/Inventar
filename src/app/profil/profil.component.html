@@ -5,9 +5,14 @@
 
 <ion-content>
   <ion-grid fixed>
-    <ion-row  class="ion-text-center ion-padding-top">
-      <ion-col size="12">
-        <ion-title>Profil</ion-title>
+    <ion-row  class="ion-text-center ion-padding-top ion-justify-content-center">
+      <ion-col size="12" class="ion-justify-content-center">
+        <ion-card>
+          <ion-avatar>
+            <ion-img src="./assets/icon/defaultUserIcon.svg"></ion-img>
+          </ion-avatar>
+          <ion-title>{{ username }}</ion-title>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

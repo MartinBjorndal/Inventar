@@ -1,3 +1,4 @@
+import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,9 +19,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    AdminComponent],
+  exports: [NavbarComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

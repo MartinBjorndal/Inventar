@@ -1,6 +1,3 @@
-<ion-header [translucent]="true">
-  <app-navbar></app-navbar>
-</ion-header>
 
 <ion-content>
   <ion-grid fixed>
@@ -35,13 +32,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>000001</td>
-                <td>Telt</td>
-                <td>Tilgjengelig</td>
-                <td>Lageret</td>
-                <td>Ødelagt af</td>
-              </tr>
+              <ng-container *ngFor="let inv of inventar">
+                <tr *ngIf="inv['status']">
+                  <td> {{ inv['uid'] }} </td>
+                  <td> {{ inv['name'] }} </td>
+                  <td> {{ inv['status'] }} </td>
+
+                  <td> {{ inv['location'] }} </td>
+                  <td> {{ inv['comment'] }} </td>
+                </tr>
+              </ng-container>
             </tbody>
           </table>
         </ion-card>

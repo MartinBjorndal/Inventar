@@ -1,5 +1,4 @@
-
-<ion-content>
+io<ion-content>
   <ion-grid fixed>
     <ion-row  class="ion-text-center ion-padding-top">
       <ion-col size="12">
@@ -8,33 +7,4 @@
     </ion-row>
   </ion-grid>
 
-  <div *ngIf="error">{{error}}</div>
-<div *ngIf="success">{{success}}</div>
-    
-<div id="theList">
-  <table>
-    <thead>
-      <tr>
-        <th>Navn</th>
-        <th>UID</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let inv of inventar">
-        <tr>
-          <td> {{ inv['name'] }} </td>
-          <td> {{ inv['uid'] }} </td>
-          <td> {{ inv['status'] }} </td>
-        </tr>
-      </ng-container>
-      
-    </tbody>
-  </table>
-
-
-
-  
-</div>
-  
 </ion-content>

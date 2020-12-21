@@ -1,3 +1,4 @@
+import { ProfilComponent } from './../../profil/profil.component';
 import { PopoverComponent } from './../popover/popover.component';
 import { PopoverController } from '@ionic/angular';
 import { Component, HostListener, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  username = 'Default';
+  username = sessionStorage.getItem("name");
   loggedin = sessionStorage.getItem("loggedin");
   constructor(private popCtrl: PopoverController, public router: Router) { 
 

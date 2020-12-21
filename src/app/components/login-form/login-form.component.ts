@@ -1,6 +1,7 @@
+import { BrukerService } from './../../bruker.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
+import { Bruker } from 'src/app/bruker';
 
 
 @Component({
@@ -10,14 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
+  
   loginForm: FormGroup;
   post: any;
   uid: string = '';
   pin: string = '';
   uidAlert = 'Dette feltet er påkrevd, og må inneholde mellom 4 og 6 tall';
   pinAlert = 'Dette feltet er påkrevd, og må inneholde mellom 4 og 6 tall';
+  users: Bruker[];
+  user: Bruker;
+  error = '';
+  status = '';
+  checkUser: any;
+  success: boolean;
 
-  constructor(private fb: FormBuilder) {
+
+  constructor(private fb: FormBuilder, private BrukerService: BrukerService) {
 
     this.loginForm = fb.group({
       'uid': [null, Validators.compose([Validators.pattern('^[0-9]+$'),
@@ -27,13 +36,38 @@ export class LoginFormComponent implements OnInit {
     });
    }
 
-   addPost(post){
-     this.uid = post.uid;
-     this.pin = post.pin;
-     sessionStorage.setItem('loggedin',"true");
-     console.log('UID: ', this.uid,'Pin: ', this.pin)
-     location.reload();
+   login(post){
+    this.uid = post.uid;
+    this.pin = post.pin;
+    this.getUser(this.uid);
+    
+    if(this.checkUser != undefined){
+      if(this.checkUser == "User not found"){
+        console.log("User not found");
+
+      } else if (this.checkUser.pin == this.pin){
+        sessionStorage.setItem("name", this.checkUser["name"]);
+        sessionStorage.setItem('loggedin',"true");
+        location.reload();
+
+      } else {
+        console.log(this.checkUser.pin)
+        console.log("Wrong pin" + this.checkUser)
+      }
+  }
    }
+
+  
+  getUser(uid){
+    this.BrukerService.getSingle(uid).subscribe((res: Bruker) => {
+      this.checkUser = JSON.parse(JSON.stringify(res));
+
+
+    },
+    (err) => {
+      this.error = err;
+    });
+  }
 
   ngOnInit() {
     this.loginForm.get('uid').valueChanges.subscribe((uid) => {
@@ -42,6 +76,9 @@ export class LoginFormComponent implements OnInit {
         this.loginForm.get('uid').setValidators([Validators.required, Validators.minLength(4), Validators.maxLength(6)]);
       }
     });
-  }
+
+ 
+
+}
 
 }

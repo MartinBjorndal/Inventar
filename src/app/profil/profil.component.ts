@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.scss'],
 })
 export class ProfilComponent implements OnInit {
-  username = 'Default'; 
+  username: string = sessionStorage.getItem("name"); 
   constructor() { }
 
   ngOnInit() {}
+
+  editProfile(){
+    if (this.username == "Default") {
+      this.username = "New"
+    } else {
+      this.username = "Default"
+    }
+  }
 
 }

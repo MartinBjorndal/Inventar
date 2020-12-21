@@ -31,7 +31,7 @@ export class InventarService {
     console.log(error);
 
     // return an observable with a user friendly message
-    return throwError('Error! Noe gikk feil.');
+    return throwError('Error! Noe gikk feil:          ' +    error['message']);
   }
 }
 

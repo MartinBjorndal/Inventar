@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
   inventar: Inventar[];
   error = '';
-  success = '';
+  success: boolean;
 
   constructor(private inventarService: InventarService) { }
 
@@ -24,6 +24,7 @@ export class AdminComponent implements OnInit {
   getInventar(): void {
     this.inventarService.getAll().subscribe((res: Inventar[]) => {
       this.inventar = res['body'];
+      this.success = true;
     },
     (err) => {
       this.error = err;

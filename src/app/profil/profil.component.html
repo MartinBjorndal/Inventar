@@ -1,6 +1,3 @@
-<ion-header [translucent]="true">
-  <app-navbar></app-navbar>
-</ion-header>
 
 
 <ion-content>
@@ -12,6 +9,9 @@
             <ion-img src="./assets/icon/defaultUserIcon.svg"></ion-img>
           </ion-avatar>
           <ion-title>{{ username }}</ion-title>
+          <ion-button (click)="editProfile()" size="small" expand="fill" fill="clear" shape="round">
+            <ion-icon name="create-outline" size="medium"></ion-icon>
+          </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>

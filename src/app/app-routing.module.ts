@@ -36,7 +36,7 @@ const routes: Routes = [
   {
     path: 'utsjekket',
     component: UtsjekketComponent
-  },
+  }
   
   
 

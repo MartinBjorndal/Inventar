@@ -6,7 +6,7 @@
       <ion-img style="width: 120px; height: 120px; margin-left: calc(50% - 60px)" src="../../../assets/icon/logo.png"></ion-img>
       <ion-card class="margin padding justify-content-center">
 
-        <form [formGroup]="loginForm" (ngSubmit)="addPost(loginForm.value)">
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
         <ion-item>
           <ion-label position="floating">UID:</ion-label>
           <ion-input formControlName="uid" inputmode="numeric" clear-input="true" type="text"></ion-input>

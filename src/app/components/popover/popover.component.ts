@@ -21,8 +21,12 @@ admin(){}
 
 logut(){
   sessionStorage.clear();
-  location.reload();
-  this.router.navigate(['/home']);
+  if(this.router.url === "/home"){
+    location.reload();
+  }
+  else{
+    this.router.navigateByUrl("/home");
+  }
 }
 
 }

@@ -2,11 +2,11 @@ import { BrukerService } from './../../bruker.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Bruker } from 'src/app/bruker';
-import { bcrypt } from 'bcryptjs';
-import { String } from 'aws-sdk/clients/apigateway';
-import { resetFakeAsyncZone } from '@angular/core/testing';
+import * as bcrypt from 'bcryptjs';
 
-const bcrypt = require('bcryptjs');
+
+
+
 
 @Component({
   selector: 'app-login-form',
@@ -49,7 +49,7 @@ export class LoginFormComponent implements OnInit {
       console.log(this.pin)
       console.log(this.checkUser["pin"])
 
-      bcrypt.compare(this.checkUser["pin"], this.pin).then((res) =>{
+      bcrypt.compare(this.pin, this.checkUser["pin"]).then((res) =>{
         if(res){
           console.log("authentication successful")
           // Send JWT, Correct password
@@ -68,7 +68,7 @@ export class LoginFormComponent implements OnInit {
    }
 
   getUser(uid){
-    this.BrukerService.getSingle(uid).subscribe((res: String) => {
+    this.BrukerService.getSingle(uid).subscribe((res: string) => {
       this.checkUser = JSON.parse(res);
     },
     (err) => {

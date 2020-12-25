@@ -13,7 +13,7 @@ import { Inventar } from './inventar';
 })
 
 export class InventarService {
-  baseUrl = 'http://localhost/api/inventory/';
+  baseUrl = 'https://api.inventar.torhelge.no/inventory/';
   inventar: Inventar;
   dbg: any;
   constructor(private http: HttpClient) { }

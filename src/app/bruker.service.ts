@@ -10,7 +10,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BrukerService {
-  baseUrl = 'http://localhost/api/users/';
+  baseUrl = 'https://api.inventar.torhelge.no/users/';
   users: Bruker[];
   user: Bruker;
   dbg: any;

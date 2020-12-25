@@ -2,7 +2,11 @@ import { BrukerService } from './../../bruker.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Bruker } from 'src/app/bruker';
+import { bcrypt } from 'bcryptjs';
+import { String } from 'aws-sdk/clients/apigateway';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 
+const bcrypt = require('bcryptjs');
 
 @Component({
   selector: 'app-login-form',
@@ -40,29 +44,32 @@ export class LoginFormComponent implements OnInit {
     this.uid = post.uid;
     this.pin = post.pin;
     this.getUser(this.uid);
-    
-    if(this.checkUser != undefined){
-      if(this.checkUser == "User not found"){
-        console.log("User not found");
+    if(this.checkUser != undefined && this.pin != undefined){
+      console.log(this.checkUser)
+      console.log(this.pin)
+      console.log(this.checkUser["pin"])
 
-      } else if (this.checkUser.pin == this.pin){
-        sessionStorage.setItem("name", this.checkUser["name"]);
-        sessionStorage.setItem('loggedin',"true");
-        location.reload();
-
-      } else {
-        console.log(this.checkUser.pin)
-        console.log("Wrong pin" + this.checkUser)
-      }
-  }
+      bcrypt.compare(this.checkUser["pin"], this.pin).then((res) =>{
+        if(res){
+          console.log("authentication successful")
+          // Send JWT, Correct password
+         
+          // TEMP
+          sessionStorage.setItem("name", this.checkUser["name"]);
+          sessionStorage.setItem('loggedin',"true");
+          location.reload();
+          //
+        } else {
+          console.log("authentication failed. Password doesn't match")
+          console.log(res)
+          // do other stuff
+        }
+      }).catch((err)=>console.error(err))};
    }
 
-  
   getUser(uid){
-    this.BrukerService.getSingle(uid).subscribe((res: Bruker) => {
-      this.checkUser = JSON.parse(JSON.stringify(res));
-
-
+    this.BrukerService.getSingle(uid).subscribe((res: String) => {
+      this.checkUser = JSON.parse(res);
     },
     (err) => {
       this.error = err;

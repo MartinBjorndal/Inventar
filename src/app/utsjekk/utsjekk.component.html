@@ -1,60 +1,27 @@
 
+
+
 <ion-content color="secondary">
   <ion-grid fixed>
-     <!-- Titel -->
-     <ion-row  class="ion-text-center ion-padding-top">
+    <ion-row  class="ion-text-center ion-padding-top">
       <ion-col size="12">
-        <ion-title>Utsjekk</ion-title>
+        <ion-title id="title">Utsjekk</ion-title>
       </ion-col>
     </ion-row>
-
-    <!-- Søke Felt -->
     <ion-row>
-      <ion-col size="3"></ion-col>
+      <ion-col size="0" size-md="3" size-lg="4"></ion-col>
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-searchbar placeholder="Inventar ID" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+      </ion-col>
+      <ion-col size="0" size-md="3" size-lg="4"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        
+      </ion-col>
       <ion-col size="6">
-        <ion-searchbar showCancelButton="focus" color="primary" autocorrect="on" enterkeyhint="enter"></ion-searchbar>
-      </ion-col>
-      <ion-col size="3"></ion-col>
-    </ion-row>
-
-    <!-- Liste av tilgjengelig inventar -->
-    <ion-row>
-      <ion-col size="12">
-        <ion-card>
-          <table id="myTable">
-            <thead>
-               <tr>
-                <th>Uid</th>
-                <th>Navn</th>
-                <th>Status</th>
-                <th>Plassering</th>
-                <th>Kommentar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <ng-container *ngFor="let inv of inventar">
-                <tr *ngIf="inv['status']">
-                  <td> {{ inv['uid'] }} </td>
-                  <td> {{ inv['name'] }} </td>
-                  <td> {{ inv['status'] }} </td>
-
-                  <td> {{ inv['location'] }} </td>
-                  <td> {{ inv['comment'] }} </td>
-                </tr>
-              </ng-container>
-            </tbody>
-          </table>
-        </ion-card>
-
+        <h1>{{ searchText }}</h1>
       </ion-col>
     </ion-row>
-
   </ion-grid>
-  <script>
-    $(document).ready( function () {
-    $('#myTable').DataTable();
-  });
-
-</script>
 </ion-content>
-

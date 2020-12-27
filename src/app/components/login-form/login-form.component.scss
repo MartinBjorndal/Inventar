@@ -41,18 +41,30 @@ ion-card{
     font-weight: bold;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: -16.9%;
+    margin-top: 16.9%;
     margin-bottom: 10%;
-    word-break: break-all;
+    text-overflow: clip;
 
+    /* Required for text-overflow to do anything */
+    white-space: unset;
+    overflow: unset;
 }
+
+#titlephone{
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    display: none;
+}
+
+
 
 
 #logo{
     width: calc(381px/1.5); 
     height: calc(327px/1.5);
     margin-left: calc(50% - 127px);
-    margin-bottom: -6.9%;
+    margin-bottom: -26.9%;
     //transform: translateX(50%);
 }
 
@@ -68,3 +80,12 @@ ion-card{
         transform: translateY(0);
     }
 }
+
+@media only screen and (max-width: 450px) {
+    #title{
+        display: none;
+    }
+    #titlephone{
+        display: unset;
+    }
+  }

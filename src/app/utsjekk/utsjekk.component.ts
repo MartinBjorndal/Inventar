@@ -8,28 +8,14 @@ import { InventarService } from '../inventar.service';
   styleUrls: ['./utsjekk.component.scss'],
 })
 export class UtsjekkComponent implements OnInit {
-  inventar: Inventar[];
-  error = '';
-  status = '';
-  success: boolean;
+  searchText = "";
+  constructor() {
+    
+   }
 
-  constructor(private inventarService: InventarService) { }
-
-  ngOnInit() {
-    this.getInventar();
+  onSearchChange(event){
+    this.searchText = event.detail.value;
   }
 
-  getInventar(): void {
-    this.inventarService.getAll().subscribe((res: Inventar[]) => {
-      this.inventar = res['body'];
-      this.success = true;
-
-      for(let inv of this.inventar){
-        console.log(inv['status'])
-      }
-    },
-    (err) => {
-      this.error = err;
-    });
-  }
+  ngOnInit() {}
 }

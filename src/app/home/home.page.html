@@ -6,19 +6,28 @@
     <app-login-form></app-login-form>
   </ion-col> 
 
+
+
 <!-- Vis navigering hvis bruker er innlogget -->
 <div class="wrapper">
  <ion-grid *ngIf="loggedin">
+
+   <!-- Innsjekk knapp -->
    <ion-row>
-    <ion-col size="12">
+    <ion-col size="3"></ion-col>
+    <ion-col size="12" id="innsjekk">
         <ion-button routerLink="/innsjekk" fill="outline" size="large">Innsjekk</ion-button>
     </ion-col>
-  </ion-row>  
+    <ion-col size="3"></ion-col>
+  </ion-row> 
+
+  <!-- Utsjekk knapp -->
   <ion-row>
-    <ion-col size="12">
+    <ion-col size="12" id="utsjekk" > 
       <ion-button routerLink="/utsjekk" fill="outline" size="large">Utsjekk</ion-button>
     </ion-col>
   </ion-row>
+
  </ion-grid>
 </div>
 

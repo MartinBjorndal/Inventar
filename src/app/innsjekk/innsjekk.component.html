@@ -5,7 +5,22 @@
   <ion-grid fixed>
     <ion-row  class="ion-text-center ion-padding-top">
       <ion-col size="12">
-        <ion-title>Innsjekk</ion-title>
+        <ion-title id="title">Innsjekk</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="0" size-md="3" size-lg="4"></ion-col>
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-searchbar placeholder="Inventar ID" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+      </ion-col>
+      <ion-col size="0" size-md="3" size-lg="4"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        
+      </ion-col>
+      <ion-col size="6">
+        <h1>{{ searchText }}</h1>
       </ion-col>
     </ion-row>
   </ion-grid>

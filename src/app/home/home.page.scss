@@ -1,6 +1,7 @@
 .wrapper{
     text-align: center;
     margin: auto;
+    width: 100%;
     margin-top: 10%;
 }
 ion-button{
@@ -8,3 +9,19 @@ ion-button{
     height: 15vh;
     padding: 2vh;
 }
+ion-row{
+    width:100%;
+}
+ion-grid{
+    width:100%;
+}
+@media only screen and (max-width: 450px) {
+    #innsjekk{
+        margin-top: 15%;
+        margin-bottom: 15%;
+    }
+    
+    #utsjekk{
+
+    }
+  }

@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./innsjekk.component.scss'],
 })
 export class InnsjekkComponent implements OnInit {
+  searchText = "";
+  constructor() {
+    
+   }
 
-  constructor() { }
+  onSearchChange(event){
+    this.searchText = event.detail.value;
+  }
 
   ngOnInit() {}
 

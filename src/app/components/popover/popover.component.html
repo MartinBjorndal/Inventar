@@ -1,6 +1,6 @@
-<ion-list>
+<ion-list color="secondary">
   <!-- Utsjekket, se hva man har sjekket ut -->
-  <ion-item>
+  <ion-item color="secondary"> 
     <ion-icon name="cart-outline"></ion-icon>
     <ion-button routerLink="/utsjekket" expand="block" fill="clear" shape="round">
       <ion-label>Utsjekket</ion-label>
@@ -9,7 +9,7 @@
 
 
   <!-- Profil, rediger profil -->
-  <ion-item>
+  <ion-item color="secondary">
     <ion-icon name="person-circle-outline"></ion-icon>
     <ion-button routerLink="/profil" expand="block" fill="clear" shape="round">
       <ion-label>Profil</ion-label>
@@ -18,7 +18,7 @@
 
 
   <!-- Admin, side instillinger, vises bare hvist man er administrator -->
-  <ion-item *ngIf="isAdmin">
+  <ion-item *ngIf="isAdmin" color="secondary"> 
     <ion-icon name="settings-outline"></ion-icon>
     <ion-button routerLink="/admin" expand="block" fill="clear" shape="round">
       <ion-label>Admin</ion-label>
@@ -27,7 +27,7 @@
 
 
   <!-- Log ut, logger deg ut ifra siden -->
-  <ion-item>
+  <ion-item color="secondary">
     <ion-icon name="log-out-outline"></ion-icon>
     <ion-button (click)="logut()" expand="block" fill="clear" shape="round">
       <ion-label>Log ut</ion-label>

@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   async openMenu(ev: any){
     const popover = await this.popCtrl.create({
       component: PopoverComponent,
+      cssClass: "po",
       event: ev,
     });
 

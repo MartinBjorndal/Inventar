@@ -1,4 +1,4 @@
-<ion-toolbar>
+<ion-toolbar color="secondary">
   
   <!-- Titel og link tilbake til hjemmeside -->
     <ion-button routerLink="/home" fill="clear" id="tittel">
@@ -11,10 +11,10 @@
   </ion-buttons>
 
   <!-- Vis bruker avatar, brukernavn og meny hvist bruker er logget inn -->
-  <ion-item slot="end" *ngIf="loggedin">
+  <ion-item color="secondary" slot="end" *ngIf="loggedin">
 
     <!-- Proiflbilde -->
-    <ion-avatar slot="start" routerLink="/profil">
+    <ion-avatar  slot="start" routerLink="/profil">
       <ion-img src="./assets/icon/defaultUserIcon.svg"></ion-img>
     </ion-avatar> 
 

@@ -1,29 +1,31 @@
-<ion-grid>
+<ion-grid >
   <ion-row>
     <ion-col size="1" size-md="3" size-xl="4"></ion-col>
 
     <ion-col size="10" size-md="6" size-xl="4">
-      <ion-img style="width: 120px; height: 120px; margin-left: calc(50% - 60px)" src="../../../assets/icon/logo.png"></ion-img>
-      <ion-card class="margin padding justify-content-center">
+      <!-- <ion-img style="width: 120px; height: 120px; margin-left: calc(50% - 60px)" src="../../../assets/icon/logo.png"></ion-img>-->
+      <ion-img id="logo" src="../../../assets/NSF-logo.png"></ion-img>
+      <ion-title id="title" color="primary">Norges Speiderforbund</ion-title>
+      <ion-card class="margin padding justify-content-center loginform" color="secondary">
 
-        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-        <ion-item>
-          <ion-label position="floating">UID:</ion-label>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" >
+        <ion-item color="secondary">
+          <ion-label id="label" position="floating">UID:</ion-label>
           <ion-input formControlName="uid" inputmode="numeric" clear-input="true" type="text"></ion-input>
         </ion-item>
         <div class="alert" *ngIf="!loginForm.controls['uid'].valid && loginForm.controls['uid'].touched && loginForm.controls['uid'].value.length > 0">
           {{ uidAlert }}
         </div>
 
-        <ion-item>
-          <ion-label position="floating">PIN:</ion-label>
+        <ion-item color="secondary">
+          <ion-label id="label" position="floating">PIN:</ion-label>
           <ion-input formControlName="pin" inputmode="numeric" clear-input="true" type="password"></ion-input>
         </ion-item>
         <div class="alert" *ngIf="!loginForm.controls['pin'].valid && loginForm.controls['pin'].touched && loginForm.controls['pin'].value.length > 0">
           {{ pinAlert }}
         </div>
       
-        <ion-button color="success" expand="block" type="submit" class="padding" [disabled]="!loginForm.valid">
+        <ion-button color="primary" expand="block" type="submit" class="padding" [disabled]="!loginForm.valid">
           <ion-icon slot="start" name="log-in-outline"></ion-icon>
           <ion-label>Login</ion-label>
         </ion-button>

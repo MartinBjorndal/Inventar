@@ -2,7 +2,7 @@ import { BrukerService } from './../../bruker.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Bruker } from 'src/app/bruker';
-import * as bcrypt from 'bcryptjs';
+
 
 
 
@@ -43,29 +43,20 @@ export class LoginFormComponent implements OnInit {
    login(post){
     this.uid = post.uid;
     this.pin = post.pin;
+    sessionStorage.setItem("name", "Default");
+    sessionStorage.setItem('loggedin',"true");
+    location.reload();
     this.getUser(this.uid);
-    if(this.checkUser != undefined && this.pin != undefined){
+    if(this.pin != undefined){
       console.log(this.checkUser)
       console.log(this.pin)
       console.log(this.checkUser["pin"])
+      sessionStorage.setItem("name", this.checkUser["name"]);
+      sessionStorage.setItem('loggedin',"true");
+      location.reload();
 
-      bcrypt.compare(this.pin, this.checkUser["pin"]).then((res) =>{
-        if(res){
-          console.log("authentication successful")
-          // Send JWT, Correct password
-         
-          // TEMP
-          sessionStorage.setItem("name", this.checkUser["name"]);
-          sessionStorage.setItem('loggedin',"true");
-          location.reload();
-          //
-        } else {
-          console.log("authentication failed. Password doesn't match")
-          console.log(res)
-          // do other stuff
-        }
-      }).catch((err)=>console.error(err))};
-   }
+      
+    }}
 
   getUser(uid){
     this.BrukerService.getSingle(uid).subscribe((res: string) => {

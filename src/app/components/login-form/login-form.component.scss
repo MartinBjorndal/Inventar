@@ -61,11 +61,11 @@ ion-card{
 
 
 #logo{
-    width: calc(381px/1.5); 
-    height: calc(327px/1.5);
-    margin-left: calc(50% - 127px);
-    margin-bottom: -26.9%;
-    //transform: translateX(50%);
+    width: 200px; 
+    height: 200px;
+    
+    margin-left: calc(50%);
+    transform: translateX(-100px);
 }
 
 
@@ -87,5 +87,8 @@ ion-card{
     }
     #titlephone{
         display: unset;
+    }
+    #logo{
+        margin-bottom: 30%;
     }
   }

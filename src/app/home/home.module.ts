@@ -15,7 +15,9 @@ import { LogoutComponent } from '../components/logout/logout.component';
 import { UtsjekketComponent } from '../components/utsjekket/utsjekket.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
+import { HttpClientModule } from '@angular/common/http';
+import { DataTablesModule } from 'angular-datatables';
+import { DataTableDirective } from 'angular-datatables';
 
 
 
@@ -26,7 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule,
+    HttpClientModule
   ],
   declarations: [
     HomePage,

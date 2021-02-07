@@ -14,15 +14,14 @@ import { Inventar } from './inventar';
 
 export class InventarService {
   baseUrl = 'https://api.inventar.torhelge.no/inventory/';
-  inventar: Inventar;
   dbg: any;
   constructor(private http: HttpClient) { }
 
+
   getAll(): Observable<Inventar> {
-    return this.http.get(`${this.baseUrl}/read.php`, {responseType: 'text'}).pipe(map((res) => {
-      this.inventar = JSON.parse(res);
-      console.log(this.inventar['body']);
-      return this.inventar;
+    return this.http.get(`${this.baseUrl}/read.php`).pipe(map((res) => {;
+      return res["body"] || { };
+      
     }),
     catchError(this.handleError));
   }
